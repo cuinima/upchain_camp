@@ -43,16 +43,18 @@ describe("Score", function () {
   it("Teacher set 110", async function () {
     //expect(await teacher.connect(Owner).setScore(score.address, Student.address, "语文", 110,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
     let teacher_110 = teacher.connect(Owner);
-    expect(teacher_110.setScore(score.address, Student.address, "语文", 110,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
+    expect(await teacher_110.setScore(score.address, Student.address, "语文", 110,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
   }); 
-  // it("Teacher set 110 test", async function () {
-  //   expect(teacher.connect(Owner).setScore(score.address, Student.address, "语文", 110,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
-    
-  // }); 
+
   it("not Teacher set 50", async function () {
     let not_teacher_50 = not_teacher.connect(Owner);
     expect(not_teacher_50.setScore(score.address,Student.address,"语文",50,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("not Teacher!");
   });
+  it("Teacher set 112", async function () {
+    //expect(await teacher.connect(Owner).setScore(score.address, Student.address, "语文", 110,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
+    let teacher_110 = teacher.connect(Owner);
+    expect(teacher_110.setScore(score.address, Student.address, "语文", 112,{ gasLimit: 1000000, gasPrice: ethers.utils.parseUnits("10", "gwei") })).to.be.revertedWith("Score failed!");
+  }); 
 
 
 
