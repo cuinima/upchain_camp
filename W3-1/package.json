@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "bignumber.js": "^9.1.1",
+    "hardhat": "^2.13.0"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@openzeppelin/contracts": "^4.8.2",
+    "save-dev": "^0.0.1-security"
+  }
+}

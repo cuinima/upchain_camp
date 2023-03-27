@@ -1,0 +1,16 @@
+{
+    "title": "ERC721",
+    "description": "我的ERC721",
+    "image": "ipfs://QmYGidEyQSXc9n3wGqdStsRXmaTzM1TKbNKMyRfgLHPPSr",
+    "attributes": [
+        {
+            "trait_type": "帽子",
+            "value": "鸭舌帽"
+        },
+        {
+            "trait_type": "上衣",
+            "value": "连帽衫"
+        }
+    ],
+    "version": "2"
+}
