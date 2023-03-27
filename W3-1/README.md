@@ -20,9 +20,9 @@ npm install @openzeppelin/contracts save-dev
 npx hardhat compile
 ```
 
-![作业1](D:\work\upchain_camp\W3-1\作业1.png)
+![作业1](.\作业1.png)
 
-![作业2](D:\work\upchain_camp\W3-1\作业2.png)
+![作业2](.\作业2.png)
 
 ## 作业1:ERC20
 
@@ -64,7 +64,7 @@ contract Vault{
 }
 ```
 
-![ERC20执行结果](D:\work\upchain_camp\W3-1\ERC20执行结果.png)
+![ERC20执行结果](.\ERC20执行结果.png)
 
 ## 作业2:ERC2612
 
@@ -127,7 +127,7 @@ contract Vault2612 {
 }
 ```
 
-![ERC2612执行结果](D:\work\upchain_camp\W3-1\ERC2612执行结果.png)
+![ERC2612执行结果](.\ERC2612执行结果.png)
 
 ## 作业3:发行ERC721
 
@@ -184,7 +184,7 @@ contract MyERC721 is ERC721URIStorage {
 }
 ```
 
-![erc721](D:\work\upchain_camp\W3-1\erc721.png)
+![erc721](.\erc721.png)
 
 ## 作业4:买卖NFT
 
@@ -311,4 +311,4 @@ contract NFTSWAP is IERC721Receiver {
 
 ```
 
-![nftswap](D:\work\upchain_camp\W3-1\nftswap.png)
+![nftswap](.\nftswap.png)
