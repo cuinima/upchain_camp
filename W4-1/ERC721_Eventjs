@@ -1,0 +1,48 @@
+const { ethers } = require("ethers");
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: '127.0.0.1',
+   // port:"3306",
+    user: 'root',
+    password: 'root',
+    database: 'coin_project'
+  });
+  
+
+const ERC721Addr = "0xEb260E0E5d0a00FCf4Ff6bB583BDBc0Ad43a020b";
+const ERC20721ABI = require(`./ERC721ABI.json`)
+
+
+async function parseTransferEvent(event) {
+    const TransferEvent = new ethers.utils.Interface(["event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);"]);
+    let decodedData = TransferEvent.parseLog(event);
+    let from = decodedData.args.from;
+    let to = decodedData.args.to;
+    let tokenId = decodedData.args.tokenId;
+    console.log("from:" + from);
+    console.log("to:" + to);
+    console.log("tokenId:" + tokenId);
+
+    // insert to db
+    const insertObj = { from: from, to: to, tokenId: tokenId };
+   
+    connection.query('INSERT INTO erc721_transfer SET ?', insertObj);
+   
+}
+async function main (){
+    connection.connect();
+    const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
+    
+    let my721 = new ethers.Contract(ERC721Addr,ERC20721ABI,provider);
+
+    let filter = my721.filters.Transfer();
+    filter.fromBlock = 1;
+    filter.toBlock = 1000;
+    let events = await provider.getLogs(filter);
+    console.log(events);
+    for(let i = 0;i < events.length ;i++){
+        parseTransferEvent(events[i]);
+    }
+    connection.end();
+}
+main();

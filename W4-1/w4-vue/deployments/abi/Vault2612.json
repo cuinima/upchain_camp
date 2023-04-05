@@ -1,0 +1,8 @@
+[
+  "constructor(address)",
+  "function balances(address) view returns (uint256)",
+  "function deposit(uint256)",
+  "function permitDeposit(uint256,uint256,uint8,bytes32,bytes32)",
+  "function tokenAddress() view returns (address)",
+  "function withdraw(uint256)"
+]

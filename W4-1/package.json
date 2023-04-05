@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "ethers": "5.4",
+    "mysql": "^2.18.1"
+  }
+}
